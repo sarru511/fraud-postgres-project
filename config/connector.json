@@ -1,0 +1,15 @@
+{
+  "name": "custom-postgres-fraud-source",
+  "config": {
+    "connector.class": "com.example.fraud.PostgresFraudSourceConnector",
+    "tasks.max": "1",
+    "jdbc.url": "jdbc:postgresql://POSTGRES_HOST:5432/ecommerce",
+    "jdbc.user": "connect_user",
+    "jdbc.password": "CHANGE_ME",
+    "fraud.api.url": "http://cpkafka5:8099/api/fraud/check",
+    "poll.interval.ms": "3000",
+    "batch.size": "100",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}
